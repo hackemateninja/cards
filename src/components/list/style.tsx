@@ -4,13 +4,13 @@ import styled from 'styled-components';
 const ListWrapper = styled.div`
 	
 `;
-const ListContainer = styled.div`
+const ListContainer = styled.ul`
 	
 `;
-const ListInfo = styled.div`
+const ListInfo = styled.li`
 	
 `;
-const ListText = styled.div`
+const ListText = styled.a`
 	
 `;
 

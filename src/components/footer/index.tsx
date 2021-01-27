@@ -1,11 +1,11 @@
 // Components
-import Container from '@/comp/container';
+import Container from '@comp/container';
 
 // Utilities
-import getYear from '@/util/get-year';
+import getYear from '@util/get-year';
 
 // Definitions
-import { IListContent } from '@/def/IListContent';
+import { IListContent } from '@def/IListContent';
 
 // Styles
 import { FooterWrapper, FooterContainer, FooterList, FooterAnchor, FooterText } from './style';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPlainObject } from '@/def/IPlainObject';
+import { IPlainObject } from '@def/IPlainObject';
 
 const SVGs: React.FC<IPlainObject> = ( props ) => {
 	return (

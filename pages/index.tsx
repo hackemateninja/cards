@@ -2,11 +2,11 @@
 import { ThemeProvider } from 'styled-components';
 
 // Layout
-import DefaultLayout from '@/layout/default';
+import DefaultLayout from '@layout/default';
 
 // Styles
-import GlobalStyles from '@/theme/global';
-import PrimaryTheme from '@/theme/primary';
+import GlobalStyles from '@theme/global';
+import PrimaryTheme from '@theme/primary';
 
 //Components
 

@@ -1,14 +1,14 @@
 // Components
-import Container from '@/comp/container';
+import Container from '@comp/container';
 
 // Definitions
-import { IListContent } from '@/def/IListContent';
+import { IListContent } from '@def/IListContent';
 
 // Styles
 import { ListWrapper, ListContainer, ListInfo, ListText } from './style';
 
 const TopCities = [
-	{ url: '/', title: 'About Us' },
+	{ url: '/', title: 'Brimfield, MA' },
 	{ url: '/', title: 'Contact Us' },
 ];
 
@@ -18,8 +18,8 @@ const List: React.FC = () => {
 			<Container>
 				<ListContainer>
 					{TopCities.map((item: IListContent, index: number) => (
-						<ListInfo>
-							<ListText>Brimfield, MA</ListText>
+						<ListInfo key={index}>
+							<ListText href={item.url}>{item.title}</ListText>
 						</ListInfo>
 					))}
 				</ListContainer>
