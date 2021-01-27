@@ -5,7 +5,7 @@ import Container from '@comp/container';
 import getYear from '@util/get-year';
 
 // Definitions
-import { IListContent } from '@def/IListContent';
+import { IList } from '@def/IList';
 
 // Styles
 import { FooterWrapper, FooterContainer, FooterList, FooterAnchor, FooterText } from './style';
@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
 		<FooterWrapper>
 			<Container>
 				<FooterContainer>
-					{ListFooter.map((item: IListContent, index: number) => (
+					{ListFooter.map((item: IList, index: number) => (
 						<FooterList key={index}>
-							<FooterAnchor href={item.url}>{item.title}</FooterAnchor>
+							<FooterAnchor href={item.url} title={item.title}>{item.title}</FooterAnchor>
 						</FooterList>
 					))}
 				</FooterContainer>

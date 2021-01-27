@@ -2,7 +2,7 @@
 import Container from '@comp/container';
 
 // Definitions
-import { IListContent } from '@def/IListContent';
+import { IList } from '@def/IList';
 
 // Styles
 import { ListWrapper, ListContainer, ListInfo, ListText } from './style';
@@ -17,7 +17,7 @@ const List: React.FC = () => {
 		<ListWrapper>
 			<Container>
 				<ListContainer>
-					{TopCities.map((item: IListContent, index: number) => (
+					{TopCities.map((item: IList, index: number) => (
 						<ListInfo key={index}>
 							<ListText href={item.url}>{item.title}</ListText>
 						</ListInfo>
