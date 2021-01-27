@@ -1,13 +1,13 @@
 // Components
-import Container from '@/comp/container';
-import Row from '@/comp/container/row';
-import Column from '@/comp/container/column';
+import Container from '@comp/container';
+import Row from '@comp/container/row';
+import Column from '@comp/container/column';
 
 // Utilities
-import getYear from '@/util/get-year';
+import getYear from '@util/get-year';
 
 // Definitions
-import { IFooter } from '@/def/IFooter';
+import { IFooter } from '@def/IFooter';
 
 // Styles
 import { FooterWrapper, FooterContainer, FooterList, FooterAnchor, FooterText } from './style';
