@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
 		<FooterWrapper>
 			<Container>
 				<Row>
-					<Column sm={1} md={3}>
+					<Column xs={1} sm={1} md={3}>
 						<FooterContainer>
 							{FirstColumn.map((item: IFooter, index: number) => (
 								<FooterList key={index}>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 							))}
 						</FooterContainer>
 					</Column>
-					<Column sm={1} md={3}>
+					<Column xs={1} sm={1} md={3}>
 						<FooterContainer>
 							{SecondColumn.map((item: IFooter, index: number) => (
 								<FooterList key={index}>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 							))}
 						</FooterContainer>
 					</Column>
-					<Column sm={1} md={3}>
+					<Column xs={1} sm={1} md={3}>
 						<FooterContainer>
 							{ThirdColumn.map((item: IFooter, index: number) => (
 								<FooterList key={index}>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
 							))}
 						</FooterContainer>
 					</Column>
-					<Column sm={1} md={1}>
+					<Column xs={1} sm={1} md={1}>
 						<FooterText>© {year} AutoWeb, Inc.</FooterText>
 					</Column>
 				</Row>
