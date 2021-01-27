@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 	const year = getYear();
 	return (
 		<FooterWrapper>
-			<p>Footer</p>
+			<p>Footer change</p>
 		</FooterWrapper>
 	);
 };
