@@ -5,7 +5,7 @@ import Container from '@comp/container';
 import getYear from '@util/get-year';
 
 // Definitions
-import { IListContent } from '@def/IListContent';
+import { IListContent } from '@def/IList';
 
 // Styles
 import { FooterWrapper, FooterContainer, FooterList, FooterAnchor, FooterText } from './style';
