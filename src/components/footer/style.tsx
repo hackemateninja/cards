@@ -9,12 +9,42 @@ const FooterWrapper = styled.div`
 	}
 `;
 const FooterContainer = styled.ul`
-	list-style: none;
-    padding: 0;
+	list-style-type: none;
     margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+	@media screen and ( min-width: 768px ) {
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		height: 180px;
+	}
 `;
 const FooterList = styled.li`
-	color: #fff;
+	-webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+	@media screen and ( min-width: 768px ) {
+		width: 33.333333%;
+		height: auto;
+		max-height: 50px;
+		-webkit-flex-basis: auto;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		max-width: 100%;
+	}
 `;
 const FooterAnchor = styled.a`
 	padding: 12px 0;
