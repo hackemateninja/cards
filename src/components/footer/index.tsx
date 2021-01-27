@@ -5,12 +5,12 @@ import Container from '@comp/container';
 import getYear from '@util/get-year';
 
 // Definitions
-import { IFooter } from '@def/IFooter';
+import { IListContent } from '@def/IListContent';
 
 // Styles
 import { FooterWrapper, FooterContainer, FooterList, FooterAnchor, FooterText } from './style';
 
-const FirstColumn = [
+const ListFooter = [
 	{ url: '/', title: 'About Us' },
 	{ url: '/', title: 'Contact Us' },
 	{ url: '/', title: 'Privacy Policy' },
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 		<FooterWrapper>
 			<Container>
 				<FooterContainer>
-					{FirstColumn.map((item: IFooter, index: number) => (
+					{ListFooter.map((item: IListContent, index: number) => (
 						<FooterList key={index}>
 							<FooterAnchor href={item.url}>{item.title}</FooterAnchor>
 						</FooterList>

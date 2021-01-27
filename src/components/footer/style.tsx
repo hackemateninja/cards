@@ -35,7 +35,7 @@ const FooterList = styled.li`
 	@media screen and ( min-width: 768px ) {
 		width: 33.333333%;
 		height: auto;
-		max-height: 50px;
+		max-height: 45px;
 		-webkit-flex-basis: auto;
 		-ms-flex-preferred-size: auto;
 		flex-basis: auto;
