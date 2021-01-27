@@ -45,6 +45,7 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
 
 	#__next {
 		position: static;
+		margin-top: 60px;
 	}
 `;
 

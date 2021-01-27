@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 				<FooterContainer>
 					{ListFooter.map((item: IListContent, index: number) => (
 						<FooterList key={index}>
-							<FooterAnchor href={item.url}>{item.title}</FooterAnchor>
+							<FooterAnchor href={item.url} title={item.title}>{item.title}</FooterAnchor>
 						</FooterList>
 					))}
 				</FooterContainer>
