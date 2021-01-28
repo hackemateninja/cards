@@ -14,6 +14,12 @@ const ListContainer = styled.ul<{ type?: string }>`
 	@media screen and ( min-width: 768px ) {
 		margin-bottom: 60px;
 		flex-direction: column;
+		${props => props.type === 'prices' && css`
+			height: 200px;
+		`}
+		${props => props.type === 'articles' && css`
+			height: 100px;
+		`}
 		${props => props.type === 'cities' && css`
 			height: 350px;
 		`}
@@ -25,6 +31,14 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+	${props => props.type === 'prices' && css`
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	`}
+	${props => props.type === 'articles' && css`
+		&:last-child a {
+			color: #00a0ff;
+		}
+	`}
 	${props => props.type === 'cities' && css`
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 	`}
@@ -43,7 +57,7 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
 	}
 	@media screen and ( min-width: 768px ) {
 		height: auto;
-		max-height: 50px;
+		max-height: 32px;
 		-webkit-flex-basis: auto;
 		-ms-flex-preferred-size: auto;
 		flex-basis: auto;
@@ -52,8 +66,11 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
 		-ms-flex-positive: 1;
 		flex-grow: 1;
 		max-width: 100%;
+		margin-bottom: 18px;
+		${props => props.type === 'prices' && css`
+			border-bottom: none;
+		`}
 		${props => props.type === 'cities' && css`
-			margin-bottom: 18px;
 			border-bottom: none;
 		`}
 		${props => props.col === 3 && css`
