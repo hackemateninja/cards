@@ -4,6 +4,10 @@ import { ThemeProvider } from 'styled-components';
 // Layout
 import DefaultLayout from '@layout/default';
 
+//Components
+import HeroImage from '@comp/hero-image';
+import List from '@comp/list';
+
 // Styles
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
@@ -59,11 +63,12 @@ const Prices = [
 	{ url: '#', title: 'Cars Over $45,000' },
 ];
 
-export default function Home() {
+const Home: React.FC = ( props ) => {
 	return (
 		<ThemeProvider theme={PrimaryTheme}>
 			<GlobalStyles />
 			<DefaultLayout>
+				<HeroImage />
 				<ByPrices items={Prices} type="prices" columns={3} />
 
 				<ByArticles items={Articles} type="articles" columns={3} />
@@ -71,5 +76,7 @@ export default function Home() {
 				<ByCities items={TopCities} type="cities" columns={3} />
 			</DefaultLayout>
 		</ThemeProvider>
-	)
-}
+	);
+};
+
+export default Home;

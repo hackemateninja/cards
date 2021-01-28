@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // Definitions
-import { IList } from '@def/IList';
+import { IListContent } from '@def/IList';
 
 // Styles
 import { MenuWrapper, MenuButton, MenuContent, MenuHeader, MenuIconCross, MenuClose, MenuList, MenuItem, MenuAnchor } from './style';
@@ -27,7 +27,7 @@ const Menu: React.FC = ( props ) => {
 					<MenuClose onClick={() => setOpen( false )}><MenuIconCross><use xlinkHref="#icon-cross" /></MenuIconCross> Close</MenuClose>
 				</MenuHeader>
 				<MenuList>
-					{menuData.map(( item: IList, index: number ) =>
+					{menuData.map(( item: IListContent, index: number ) =>
 						<MenuItem key={index}><MenuAnchor href={item.url} title={item.title}>{item.title}</MenuAnchor></MenuItem>
 					)}
 				</MenuList>
