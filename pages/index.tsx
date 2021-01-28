@@ -4,15 +4,12 @@ import { ThemeProvider } from 'styled-components';
 // Layout
 import DefaultLayout from '@layout/default';
 
-//Components
-import HeroImage from '@comp/hero-image';
-import List from '@comp/list';
-
 // Styles
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 
 //Components
+import HeroImage from '@comp/hero-image';
 import ByPrices from '@comp/by-prices';
 import ByArticles from '@comp/by-articles';
 import ByCities from '@comp/by-cities';
