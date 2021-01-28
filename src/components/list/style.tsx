@@ -10,7 +10,7 @@ const ListContainer = styled.ul<{ type?: string }>`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 	@media screen and ( min-width: 768px ) {
 		margin-bottom: 60px;
 		flex-direction: column;
@@ -18,10 +18,15 @@ const ListContainer = styled.ul<{ type?: string }>`
 			height: 200px;
 		`}
 		${props => props.type === 'articles' && css`
-			height: 100px;
+			height: 120px;
 		`}
 		${props => props.type === 'cities' && css`
 			height: 350px;
+		`}
+	}
+	@media screen and ( min-width: 1260px ) {
+		${props => props.type === 'articles' && css`
+			height: 100px;
 		`}
 	}
 `;
@@ -33,6 +38,19 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
     max-width: 100%;
 	${props => props.type === 'prices' && css`
 		border-bottom: 1px solid rgba(0,0,0,0.1);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			margin-top: -6px;
+			right: 17px;
+			width: 0;
+			height: 0;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-left: 8px solid #0ae61e;
+			display: block;
+		}
 	`}
 	${props => props.type === 'articles' && css`
 		&:last-child a {
@@ -41,23 +59,23 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
 	`}
 	${props => props.type === 'cities' && css`
 		border-bottom: 1px solid rgba(0,0,0,0.1);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			margin-top: -6px;
+			right: 17px;
+			width: 0;
+			height: 0;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-left: 8px solid #0ae61e;
+			display: block;
+		}
 	`}
-	&:after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		margin-top: -6px;
-		right: 17px;
-		width: 0;
-		height: 0;
-		border-top: 6px solid transparent;
-		border-bottom: 6px solid transparent;
-		border-left: 8px solid #0ae61e;
-		display: block;
-	}
 	@media screen and ( min-width: 768px ) {
 		height: auto;
-		max-height: 32px;
+		max-height: 45px;
 		-webkit-flex-basis: auto;
 		-ms-flex-preferred-size: auto;
 		flex-basis: auto;
@@ -69,9 +87,15 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
 		margin-bottom: 18px;
 		${props => props.type === 'prices' && css`
 			border-bottom: none;
+			&:after {
+				display: none;
+			}
 		`}
 		${props => props.type === 'cities' && css`
 			border-bottom: none;
+			&:after {
+				display: none;
+			}
 		`}
 		${props => props.col === 3 && css`
 			width: 33.333333%;
@@ -79,9 +103,9 @@ const ListInfo = styled.li<{ type?: string; col: number }>`
 		${props => props.col === 4 && css`
 			width: 25%;
 		`}
-		&:after {
-			display: none;
-		}
+	}
+	@media screen and ( min-width: 1260px ) {
+		max-height: 32px;
 	}
 `;
 const ListText = styled.a`

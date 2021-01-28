@@ -9,7 +9,9 @@ import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 
 //Components
-import List from '@comp/list';
+import ByPrices from '@comp/by-prices';
+import ByArticles from '@comp/by-articles';
+import ByCities from '@comp/by-cities';
 
 const TopCities = [
 	{ url: '#', title: 'Austin, TX' },
@@ -62,13 +64,11 @@ export default function Home() {
 		<ThemeProvider theme={PrimaryTheme}>
 			<GlobalStyles />
 			<DefaultLayout>
-				<h1>UsedCars</h1>
-				
-				<List items={Prices} type="prices" columns={3} />
+				<ByPrices items={Prices} type="prices" columns={3} />
 
-				<List items={Articles} type="articles" columns={3} />
+				<ByArticles items={Articles} type="articles" columns={3} />
 
-				<List items={TopCities} type="cities" columns={3} />
+				<ByCities items={TopCities} type="cities" columns={3} />
 			</DefaultLayout>
 		</ThemeProvider>
 	)
