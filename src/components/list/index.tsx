@@ -1,29 +1,19 @@
-// Components
-import Container from '@comp/container';
-
 // Definitions
-import { IList } from '@def/IList';
+import { IList, IListContent } from '@def/IList';
 
 // Styles
-import { ListWrapper, ListContainer, ListInfo, ListText } from './style';
+import { ListWrapper, ListContainer, ListInfo, ListText, ListSpan } from './style';
 
-const TopCities = [
-	{ url: '/', title: 'Brimfield, MA' },
-	{ url: '/', title: 'Contact Us' },
-];
-
-const List: React.FC = () => {
+const List: React.FC<IList> = (props) => {
 	return (
 		<ListWrapper>
-			<Container>
-				<ListContainer>
-					{TopCities.map((item: IList, index: number) => (
-						<ListInfo key={index}>
-							<ListText href={item.url}>{item.title}</ListText>
-						</ListInfo>
-					))}
-				</ListContainer>
-			</Container>
+			<ListContainer type={props.type}>
+				{props.items.map((item: IListContent, index: number) => (
+					<ListInfo type={props.type} col={props.columns} key={index}>
+						<ListText href={item.url} title={item.title}><ListSpan>{item.title}</ListSpan></ListText>
+					</ListInfo>
+				))}
+			</ListContainer>
 		</ListWrapper>
 	);
 };
