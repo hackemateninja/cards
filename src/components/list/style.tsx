@@ -137,8 +137,8 @@ const ListText = styled.a`
 		}
 	}
 	&:hover {
-		color: #00a0ff;
 		@media screen and ( min-width: 768px ) {
+			color: #00a0ff;
 			&:before {
 				opacity: 1;
 				-webkit-transform: scale(1);

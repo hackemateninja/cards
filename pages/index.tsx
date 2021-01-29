@@ -9,7 +9,8 @@ import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 
 //Components
-import HeroImage from '@comp/hero-image';
+// import HeroImage from '@comp/hero-image';
+import ByTypes from '@comp/by-types';
 import ByPrices from '@comp/by-prices';
 import ByArticles from '@comp/by-articles';
 import ByCities from '@comp/by-cities';
@@ -60,12 +61,39 @@ const Prices = [
 	{ url: '#', title: 'Cars Over $45,000' },
 ];
 
+const BodyTypes = [
+	{ url: '/', value: 'coupes', title: 'Coupes', category: 'bodytype' },
+	{ url: '/', value: 'convertibles', title: 'Convertibles', category: 'bodytype' },
+	{ url: '/', value: 'sedans', title: 'Sedans', category: 'bodytype' },
+	{ url: '/', value: 'wagons', title: 'Wagons', category: 'bodytype' },
+	{ url: '/', value: 'hatchbacks', title: 'Hatchbacks', category: 'bodytype' },
+	{ url: '/', value: 'minivans', title: 'Minivans', category: 'bodytype' },
+	{ url: '/', value: 'pickup-trucks', title: 'Pickup Trucks', category: 'bodytype' },
+	{ url: '/', value: 'suvs', title: 'SUVs', category: 'bodytype' },
+	{ url: '/', value: 'crossovers', title: 'Crossovers', category: 'bodytype' },
+	{ url: '/', value: 'subcompact', title: 'Subcompact', category: 'vehicleSize' },
+	{ url: '/', value: 'mid-size', title: 'Mid Size', category: 'vehicleSize' },
+	{ url: '/', value: 'compact', title: 'Compact', category: 'vehicleSize' },
+	{ url: '/', value: 'full-size', title: 'Full-Size', category: 'vehicleSize' },
+	{ url: '/', value: 'hybrid', title: 'Hybrid', category: 'fuelType' },
+	{ url: '/', value: 'diesel', title: 'Diesel', category: 'fuelType' },
+	{ url: '/', value: 'electric', title: 'Electric', category: 'fuelType' },
+	{ url: '/', value: 'plug-in-hybrid', title: 'Plug-In Hybrid', category: 'fuelType' },
+	{ url: '/', value: 'exotic', title: 'Exotic', category: 'performance' },
+	{ url: '/', value: 'luxury', title: 'Luxury', category: 'performance' },
+	{ url: '/', value: 'high-performance', title: 'High Performance', category: 'performance' },
+	{ url: '/', value: 'sport', title: 'Sport', category: 'performance' },
+];
+
 const Home: React.FC = ( props ) => {
 	return (
 		<ThemeProvider theme={PrimaryTheme}>
 			<GlobalStyles />
 			<DefaultLayout>
-				<HeroImage />
+				{/*<HeroImage />*/}
+
+				<ByTypes items={BodyTypes} />
+
 				<ByPrices items={Prices} type="prices" columns={3} />
 
 				<ByArticles items={Articles} type="articles" columns={3} />
