@@ -14,9 +14,7 @@ const DefaultLayout: React.FC<IPlainObject> = ( props ) => {
 	return (
 		<>
 			<Header />
-			<Container>
-				{props.children}
-			</Container>
+			{props.children}
 			<Footer />
 			<SVGs />
 		</>

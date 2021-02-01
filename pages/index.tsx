@@ -5,12 +5,14 @@ import { ThemeProvider } from 'styled-components';
 import DefaultLayout from '@layout/default';
 
 //Components
+import Container from '@comp/container';
 import HeroImage from '@comp/hero-image';
 import List from '@comp/list';
 
 // Styles
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
+import SearchBox from '@comp/search-box';
 
 const TopCities = [
 	{ url: '#', title: 'Austin, TX' },
@@ -63,11 +65,13 @@ const Home: React.FC = ( props ) => {
 		<ThemeProvider theme={PrimaryTheme}>
 			<GlobalStyles />
 			<DefaultLayout>
-				<HeroImage />
-
-				<List items={Prices} type="prices" columns={3} />
-				<List items={Articles} type="articles" columns={3} />
-				<List items={TopCities} type="cities" columns={3} />
+				<Container>
+					<HeroImage />					
+					<SearchBox />
+					<List items={Prices} type="prices" columns={3} />
+					<List items={Articles} type="articles" columns={3} />
+					<List items={TopCities} type="cities" columns={3} />
+				</Container>
 			</DefaultLayout>
 		</ThemeProvider>
 	);
