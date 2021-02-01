@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 const ByPricesWrapper = styled.div`
 	display: block;
+	margin-bottom: 40px;
+	@media screen and ( min-width: 768px ) {
+		margin-bottom: 60px;
+	}
 `;
 const ByPricesTitle = styled.div`
 	color: #00a0ff;
