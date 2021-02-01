@@ -1,66 +1,43 @@
 // Packages
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 // Layout
 import DefaultLayout from '@layout/default';
 
+// Data
+import { TopCities } from '@data/TopCities';
+import { HomeArticles } from '@data/HomeArticles';
+import { Prices } from '@data/Prices';
+import { makes } from '@data/makes';
+import { BodyTypes } from '@data/BodyTypes';
+
+// Slices
+import { setMakes } from '@redux/slices/makes';
+
 //Components
 import Container from '@comp/container';
 import HeroImage from '@comp/hero-image';
 import List from '@comp/list';
+import ByTypes from '@comp/by-types';
+import ByPrices from '@comp/by-prices';
+import ByMakes from '@comp/by-makes';
+import ByArticles from '@comp/by-articles';
+import ByCities from '@comp/by-cities';
 
 // Styles
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 import SearchBox from '@comp/search-box';
 
-const TopCities = [
-	{ url: '#', title: 'Austin, TX' },
-	{ url: '#', title: 'Baltimore, MD' },
-	{ url: '#', title: 'Brimfield, MA' },
-	{ url: '#', title: 'Charlotte, NC' },
-	{ url: '#', title: 'Colorado Springs, CO' },
-	{ url: '#', title: 'Columbus, OH' },
-	{ url: '#', title: 'Dallas, TX' },
-	{ url: '#', title: 'Denver, CO' },
-	{ url: '#', title: 'Detroit, MI' },
-	{ url: '#', title: 'Fort Worth, TX' },
-	{ url: '#', title: 'Houston, TX' },
-	{ url: '#', title: 'Indianapolis, IN' },
-	{ url: '#', title: 'Jacksonville, FL' },
-	{ url: '#', title: 'Louisville, KY' },
-	{ url: '#', title: 'Miami, FL' },
-	{ url: '#', title: 'Milwaukee, WI' },
-	{ url: '#', title: 'Phoenix, AZ' },
-	{ url: '#', title: 'Pittsburgh, PA' },
-	{ url: '#', title: 'San Antonio, TX' },
-	{ url: '#', title: 'San Jose, CA' },
-	{ url: '#', title: 'Tucson, AZ' },
-];
-
-const Articles = [
-	{ url: '#', title: 'What is a Used Car Vehicle History Report?' },
-	{ url: '#', title: 'How to Inspect a Used Car' },
-	{ url: '#', title: 'What to Look for on a Used Car Test Drive' },
-	{ url: '#', title: '3 Types of Car GPS Systems' },
-	{ url: '#', title: 'How to Negotiate a Private Party Used Car Sale' },
-	{ url: '#', title: 'View All Articles' },
-];
-
-const Prices = [
-	{ url: '#', title: 'Cars Under $5,000' },
-	{ url: '#', title: 'Cars Under $10,000' },
-	{ url: '#', title: 'Cars Under $15,000' },
-	{ url: '#', title: 'Cars Under $20,000' },
-	{ url: '#', title: 'Cars Under $25,000' },
-	{ url: '#', title: 'Cars Under $30,000' },
-	{ url: '#', title: 'Cars Under $35,000' },
-	{ url: '#', title: 'Cars Under $40,000' },
-	{ url: '#', title: 'Cars Under $45,000' },
-	{ url: '#', title: 'Cars Over $45,000' },
-];
-
-const Home: React.FC = ( props ) => {
+const Home: React.FC = (props) => {
+	const dispatch = useDispatch();
+	
+	useEffect(() => {
+		dispatch( setMakes( makes ) );
+	}, []);
+	
 	return (
 		<ThemeProvider theme={PrimaryTheme}>
 			<GlobalStyles />
@@ -68,10 +45,12 @@ const Home: React.FC = ( props ) => {
 				<Container>
 					<HeroImage />					
 					<SearchBox />
-					<List items={Prices} type="prices" columns={3} />
-					<List items={Articles} type="articles" columns={3} />
-					<List items={TopCities} type="cities" columns={3} />
-				</Container>
+					<ByTypes items={BodyTypes} />
+					<ByPrices items={Prices} type="prices" columns={3} />
+					<ByMakes />
+					<ByArticles items={HomeArticles} type="articles" columns={3} />
+					<ByCities items={TopCities} type="cities" columns={3} />
+				</Container>				
 			</DefaultLayout>
 		</ThemeProvider>
 	);

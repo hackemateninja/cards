@@ -8,3 +8,7 @@ export interface IListContent {
 	url: string,
 	title: string
 }
+
+export interface IMakesList {
+	type?: string
+}
