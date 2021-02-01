@@ -10,9 +10,7 @@ const ListContainer = styled.ul<{ type?: string }>`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-	margin-bottom: 40px;
 	@media screen and ( min-width: 768px ) {
-		margin-bottom: 60px;
 		flex-direction: column;
 		${props => props.type === 'prices' && css`
 			height: 200px;

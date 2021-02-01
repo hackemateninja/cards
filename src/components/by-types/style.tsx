@@ -7,7 +7,7 @@ const ByTypesWrapper = styled.div`
 		margin-bottom: 80px;
 	}
 `;
-const ByTypesTitle = styled.div`
+const ByTypesTitle = styled.h2`
 	color: #00a0ff;
     font-size: 22px;
     font-weight: 700;

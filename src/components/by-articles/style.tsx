@@ -3,8 +3,12 @@ import styled from 'styled-components';
 
 const ByArticlesWrapper = styled.div`
 	display: block;
+	margin-bottom: 40px;
+	@media screen and ( min-width: 1024px ) {
+		margin-bottom: 80px;
+	}
 `;
-const ByArticlesTitle = styled.div`
+const ByArticlesTitle = styled.h2`
 	color: #00a0ff;
     font-size: 22px;
     font-weight: 700;
