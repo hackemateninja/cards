@@ -1,5 +1,5 @@
 // Packages
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 // Definitions
 import { IStateMakes } from '@def/IStateMakes';
@@ -8,7 +8,7 @@ import { IStateMakes } from '@def/IStateMakes';
 const initialMakes: IStateMakes = {
 	data: {
 		makes: [],
-		selectedMake: {},
+		selectedMake: {}
 	},
 };
 
@@ -23,7 +23,7 @@ const makesSlice = createSlice({
 			const make = state.data.makes.filter( make => make.value === action.payload );
 
 			state.data.selectedMake = make.length !== 0 ? make[0] : {};
-		},
+		}
 	}
 });
 

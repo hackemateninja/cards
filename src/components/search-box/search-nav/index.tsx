@@ -1,16 +1,25 @@
-// Components
-import Button from '@comp/button';
+// Packages
+import Scroll from 'react-scroll';
 
 // Style
-import { SearchNavWrapper } from './style';
+import { SearchNavWrapper, SearchNavButton } from './style';
 
-const SearchNav: React.FC = ( props ) => {
+const SearchNav: React.FC = (props) => {
+	var Link = Scroll.Link;
 	return (
 		<SearchNavWrapper>
-			<Button href="#by-type" st="browse">Browse by Type</Button>
-			<Button href="#by-price" st="browse">Browse by Price</Button>
-			<Button href="#by-make" st="browse">Browse by Make</Button>
-			<Button href="#by-location" st="browse">Browse by Location</Button>
+			<Link activeClass="active" to="browseByType" spy={true} smooth={true} offset={-80}>
+				<SearchNavButton>Browse by Type</SearchNavButton>
+			</Link>
+			<Link activeClass="active" to="browseByPrice" spy={true} smooth={true} offset={-80}>
+				<SearchNavButton>Browse by Price</SearchNavButton>
+			</Link>
+			<Link activeClass="active" to="browseByMake" spy={true} smooth={true} offset={-80}>
+				<SearchNavButton>Browse by Make</SearchNavButton>
+			</Link>
+			<Link activeClass="active" to="browseByLocation" spy={true} smooth={true} offset={-80}>
+				<SearchNavButton>Browse by Location</SearchNavButton>
+			</Link>
 		</SearchNavWrapper>
 	);
 };

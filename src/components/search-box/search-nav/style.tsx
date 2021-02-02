@@ -8,6 +8,10 @@ const SearchNavWrapper = styled.div`
 	border-left-width: 0;
 	border-right-width: 0;
 	padding: 15px 15px 0;
+	a {
+		margin-bottom: 15px;
+		display: inline-block;
+	}
 	> * {
 		margin-bottom: 15px;
 		&:not(:last-child) {
@@ -27,7 +31,26 @@ const SearchNavWrapper = styled.div`
 		}
 	}
 `;
+const SearchNavButton = styled.span`
+	cursor: pointer;
+	outline: 0;
+	border-radius: 4px;
+	padding: 8px 10px;
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid rgba( 0, 0, 0, .1 );
+	background: #FFF;
+	box-shadow: 0 5px 8px -4px rgba( 0, 0, 0, .2 );
+	color: #00A0FF;
+	font-size: 14px;
+	line-height: 20px;
+	width: auto;
+`;
 
 export {
-	SearchNavWrapper
+	SearchNavWrapper,
+	SearchNavButton
 };

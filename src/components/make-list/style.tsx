@@ -22,7 +22,7 @@ const MakeListContainer = styled.ul<{ type?: string; active?: boolean }>`
 	}
 `;
 const MakeListInfo = styled.li<{ type?: string; collapse?: boolean; active?: boolean }>`
-	margin: 0 0 24px;
+	margin: 0 0 20px;
     display: flex;
     align-items: center;
     width: 100%;
