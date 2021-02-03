@@ -9,7 +9,6 @@ const SearchNavWrapper = styled.div`
 	border-right-width: 0;
 	padding: 15px 15px 0;
 	a {
-		margin-bottom: 15px;
 		display: inline-block;
 	}
 	> * {

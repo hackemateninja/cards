@@ -1,7 +1,8 @@
 // Packages
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+import Head from 'next/head';
 
 // Layout
 import DefaultLayout from '@layout/default';
@@ -32,8 +33,9 @@ import Display from '@comp/container/display';
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 import SearchBox from '@comp/search-box';
+import HotDeals from '@comp/hot-deals';
 
-const Home: React.FC = (props) => {
+const Home: React.FC = ( props ) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -42,6 +44,9 @@ const Home: React.FC = (props) => {
 	
 	return (
 		<ThemeProvider theme={PrimaryTheme}>
+			<Head>
+				<title>Used Cars For Sale | Pre-Owned Cars, Trucks and SUVs at UsedCars.com</title>
+			</Head>
 			<GlobalStyles />
 			<DefaultLayout>
 				<Container>
@@ -64,7 +69,11 @@ const Home: React.FC = (props) => {
 					<Spaces type="desktop" bg={true}>
 						<img src="assets/img/banners/banner-01.jpg" alt="Space Desktop 1" />
 					</Spaces>
+				</Container>
 
+				<HotDeals />
+
+				<Container>
 					<ByArticles items={HomeArticles} type="articles" columns={3} />
 
 					<Spaces type="mobile" bg={true}>
@@ -89,7 +98,7 @@ const Home: React.FC = (props) => {
 						<BackToTop />
 					</Display>
 
-				</Container>				
+				</Container>			
 			</DefaultLayout>
 		</ThemeProvider>
 	);

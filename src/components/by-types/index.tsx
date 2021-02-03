@@ -8,9 +8,10 @@ import { IBodyTypes, IBodyType } from '@def/IBodyType';
 // Components
 import Row from '@comp/container/row';
 import Column from '@comp/container/column'
+import SectionTitle from '@comp/section-title';
 
 // Styles
-import { ByTypesWrapper, ByTypesTitle, ByTypesListWrapper, ByTypesList, ByTypesListText, ByTypesCategoryTitle, ByTypesSubTitle, ByTypesSubText, ByTypesDivision, ByTypesAccordion, ByTypesAccordionContent, ByTypesAccordionTrigger, ByTypesAccordionText } from './style';
+import { ByTypesWrapper, ByTypesListWrapper, ByTypesList, ByTypesListText, ByTypesCategoryTitle, ByTypesSubTitle, ByTypesSubText, ByTypesDivision, ByTypesAccordion, ByTypesAccordionContent, ByTypesAccordionTrigger, ByTypesAccordionText } from './style';
 
 const ByTypes: React.FC<IBodyTypes> = (props) => {
 	const [accordion, setAccordion] = useState<boolean>(false);
@@ -20,7 +21,7 @@ const ByTypes: React.FC<IBodyTypes> = (props) => {
 	return (
 		<ByTypesWrapper>
 			<Element name="browseByType">
-				<ByTypesTitle>Search by Type</ByTypesTitle>
+				<SectionTitle>Search by Type</SectionTitle>
 				<ByTypesListWrapper>
 					{props.items.filter(item => item.category === 'bodytype').map((item: IBodyType, index: number) => (
 						<ByTypesList key={index}>

@@ -11,9 +11,10 @@ import Display from '@comp/container/display';
 import MakeList from "@comp/make-list";
 import Button from '@comp/button';
 import Select from '@comp/form-elements/select';
+import SectionTitle from '@comp/section-title';
 
 // Styles
-import { ByMakesWrapper, ByMakesTitle, ByMakesImg, ByMakesSideTitle, ByMakesSideText } from './style';
+import { ByMakesWrapper, ByMakesImg, ByMakesSideTitle, ByMakesSideText } from './style';
 
 const options = [
 	{id: '1', name: 'Name 1', value: 'value-1'},
@@ -28,7 +29,7 @@ const ByMakes: React.FC = () => {
 	return (
 		<ByMakesWrapper>
 			<Element name="browseByMake">
-				<ByMakesTitle>Browse by Make</ByMakesTitle>
+				<SectionTitle>Browse by Make</SectionTitle>
 				<Row>
 					<Column xs={1} sm={1} md='auto'>
 						<MakeList type="accordion" />
@@ -40,7 +41,7 @@ const ByMakes: React.FC = () => {
 							<ByMakesSideText>It’s easier to find your next car when you already know what you’re looking for. Try searching the option below.</ByMakesSideText>
 							<form>
 								<Select
-									id="make"
+									id="make-list"
 									value=""
 									name="make"
 									label="Make"
@@ -49,7 +50,7 @@ const ByMakes: React.FC = () => {
 									options={options}
 								/>
 								<Select
-									id="model"
+									id="model-list"
 									value=""
 									name="model"
 									label="Model"

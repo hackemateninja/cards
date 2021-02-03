@@ -9,16 +9,17 @@ import List from '@comp/list';
 import Row from '@comp/container/row';
 import Column from '@comp/container/column';
 import Display from '@comp/container/display'
+import SectionTitle from '@comp/section-title';
 
 // Styles
-import { ByPricesWrapper, ByPricesTitle, ByPricesImg } from './style';
+import { ByPricesWrapper, ByPricesImg } from './style';
 
 const ByPrices: React.FC<IList> = (props) => {
 	const Element = Scroll.Element;
 	return (
 		<ByPricesWrapper>
 			<Element name="browseByPrice">
-				<ByPricesTitle>Browse by Price</ByPricesTitle>
+				<SectionTitle>Browse by Price</SectionTitle>
 				<Row>
 					<Column xs={1} sm={1} md='auto'>
 						<List items={props.items} type={props.type} columns={props.columns} />
