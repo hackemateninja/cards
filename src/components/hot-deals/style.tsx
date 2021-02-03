@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 
 const HotDealsWrapper = styled.div`
+	overflow: hidden;
 	margin: 40px 0;
 	padding: 0 15px;
 
