@@ -25,7 +25,7 @@ const Select: React.FC<ISelect> = ( props ) => {
 	});
 
 	return (
-		<FormElement active={focus || !empty} error={props.error}>
+		<FormElement>
 			<Element
 				id={props.id}
 				name={props.name}
