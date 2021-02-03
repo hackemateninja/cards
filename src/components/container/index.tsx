@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Definitions
-import { IPlainObject } from '@/def/IPlainObject';
+import { IPlainObject } from '@def/IPlainObject';
 
 // Styles
 import ContainerWrapper from './style';

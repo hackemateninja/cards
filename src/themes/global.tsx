@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
 	}
 	body {
 		margin: 0;
-		padding: 0;
+		padding: 60px 0 0;
 		min-height: 100%;
 		background-color: ${props => props.theme.background.default};
 		-webkit-tap-highlight-color: transparent;

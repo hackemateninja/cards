@@ -1,4 +1,7 @@
 export interface IColumn {
-	sm: number,
-	md: number
+	xs?: number | 'auto',
+	sm?: number | 'auto',
+	md?: number | 'auto',
+	lg?: number | 'auto',
+	xl?: number | 'auto'
 }

@@ -2,28 +2,31 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/comp/*": [
+      "@comp/*": [
         "src/components/*"
       ],
-      "@/util/*": [
+      "@util/*": [
         "src/utilities/*"
       ],
-      "@/def/*": [
+      "@def/*": [
         "src/definitions/*"
       ],
-      "@/redux/*": [
+      "@hook/*": [
+        "src/hooks/*"
+      ],
+      "@redux/*": [
         "src/redux/*"
       ],
-      "@/theme/*": [
+      "@theme/*": [
         "src/themes/*"
       ],
-      "@/layout/*": [
+      "@layout/*": [
         "src/layouts/*"
       ],
-      "@/data/*": [
+      "@data/*": [
         "src/data/*"
       ],
-      "@/src/*": [
+      "@src/*": [
         "src/*"
       ],
     },
