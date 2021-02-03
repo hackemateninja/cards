@@ -1,0 +1,1 @@
+export const models = [{"id":676,"name":"4C","value":"4c"},{"id":759,"name":"Giulia","value":"giulia"},{"id":833,"name":"Giulia Quadrifoglio","value":"giulia-quadrifoglio"},{"id":838,"name":"Stelvio","value":"stelvio"}];
