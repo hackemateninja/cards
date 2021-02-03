@@ -32,7 +32,7 @@ const Buy: React.FC = ( props ) => {
                             <p>Listings</p>
                         </Column>
                     </Row>
-				</Container>		
+				</Container>
 			</DefaultLayout>
 		</ThemeProvider>
 	);
