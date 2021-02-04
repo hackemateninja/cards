@@ -1,0 +1,1 @@
+export const models = [{"id":572,"name":"FR-S","value":"fr-s"},{"id":723,"name":"iA","value":"ia"},{"id":724,"name":"iM","value":"im"},{"id":573,"name":"iQ","value":"iq"},{"id":574,"name":"tC","value":"tc"},{"id":575,"name":"xA","value":"xa"},{"id":576,"name":"xB","value":"xb"},{"id":577,"name":"xD","value":"xd"}];

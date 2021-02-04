@@ -17,8 +17,8 @@ const SearchNav: React.FC = (props) => {
 			<Link activeClass="active" to="browseByMake" spy={true} smooth={true} offset={-80}>
 				<SearchNavButton>Browse by Make</SearchNavButton>
 			</Link>
-			<Link activeClass="active" to="browseByLocation" spy={true} smooth={true} offset={-80}>
-				<SearchNavButton>Browse by Location</SearchNavButton>
+			<Link activeClass="active" to="hotDeals" spy={true} smooth={true} offset={-80}>
+				<SearchNavButton>Hot Deals</SearchNavButton>
 			</Link>
 		</SearchNavWrapper>
 	);

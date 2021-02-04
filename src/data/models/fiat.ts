@@ -1,0 +1,1 @@
+export const models = [{"id":778,"name":"124","value":"124"},{"id":213,"name":"500","value":"500"},{"id":214,"name":"500 Abarth","value":"500-abarth"},{"id":665,"name":"500L","value":"500l"},{"id":741,"name":"500X","value":"500x"}];

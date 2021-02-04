@@ -1,0 +1,1 @@
+export const models = [{"id":396,"name":"Coupe","value":"coupe"},{"id":397,"name":"Ghibli","value":"ghibli"},{"id":398,"name":"GranSport","value":"gransport"},{"id":399,"name":"GranTurismo","value":"granturismo"},{"id":782,"name":"Levante","value":"levante"},{"id":400,"name":"Quattroporte","value":"quattroporte"},{"id":401,"name":"Spyder","value":"spyder"}];

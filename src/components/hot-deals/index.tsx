@@ -1,5 +1,6 @@
 // Packages
 import Flickity from 'react-flickity-component';
+import Scroll from 'react-scroll';
 
 // Components
 import ListingCard from '@comp/listing-card';
@@ -78,7 +79,8 @@ const hotDeals = [
 	}
 ];
 
-const HotDeals: React.FC = ( props ) => {
+const HotDeals: React.FC = (props) => {
+	const Element = Scroll.Element;
 	// Flickity Options
 	const flickityOptions = {
 		lazyLoad: true,
@@ -96,22 +98,24 @@ const HotDeals: React.FC = ( props ) => {
 
 	return (
 		<HotDealsWrapper>
-			<SectionTitle>Hot Deals Near You</SectionTitle>
-			<HotDealsSlider>
-				<SliderWrapper>
-					<Flickity
-						className={'carousel'}
-						elementType={'div'}
-						options={flickityOptions}
-						disableImagesLoaded={false}
-						reloadOnUpdate
-					>
-						{hotDeals.map(( item, index ) =>
-							<ListingCard key={index} {...item} />
-						)}
-					</Flickity>
-				</SliderWrapper>
-			</HotDealsSlider>
+			<Element name="hotDeals">
+				<SectionTitle>Hot Deals Near You</SectionTitle>
+				<HotDealsSlider>
+					<SliderWrapper>
+						<Flickity
+							className={'carousel'}
+							elementType={'div'}
+							options={flickityOptions}
+							disableImagesLoaded={false}
+							reloadOnUpdate
+						>
+							{hotDeals.map(( item, index ) =>
+								<ListingCard key={index} {...item} />
+							)}
+						</Flickity>
+					</SliderWrapper>
+				</HotDealsSlider>
+			</Element>
 		</HotDealsWrapper>
 	);
 };

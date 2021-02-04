@@ -1,14 +1,14 @@
 // Packages
 import styled, { css } from 'styled-components';
 
-const SpacesWrapper = styled.div<{ type?: string; bg?: boolean }>`
+const SpacesWrapper = styled.div<{ type?: string; bg?: boolean; page?: string }>`
 	margin: 40px 0;
 	text-align: center;
-	display: ${props => props.type === 'desktop' && 'none'};
+	display: ${(props) => props.type === 'desktop' && 'none'};
 	@media screen and ( min-width: 768px ) {
-		display: ${(props) => (props.type === 'desktop' ? 'block' : 'none')};	
+		display: ${(props) => (props.type === 'desktop' ? 'block' : 'none')};
 	}
-	${props => props.bg === true && css`
+	${(props) => props.bg === true && css`
 		border: 1px solid rgba(0,0,0,0.1);
 		background-color: rgba(0,0,0,0.05);
 		margin: 0 -15px 40px;
@@ -18,7 +18,13 @@ const SpacesWrapper = styled.div<{ type?: string; bg?: boolean }>`
 			margin: 0 0 80px;
 		}
 	`}
-	${props => props.type === 'floated' && css`
+	${(props) => props.page === 'srp' && css`
+		margin: 15px 0;
+		@media screen and ( min-width: 768px ) {
+			margin: 15px 0;
+		}
+	`}
+	${(props) => props.type === 'floated' && css`
 		text-align: center;
 		border: 1px solid rgba(0,0,0,0.1);
 		background-color: rgba(0,0,0,0.05);
