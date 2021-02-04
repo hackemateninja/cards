@@ -19,7 +19,7 @@ const SearchBox: React.FC = ( props ) => {
 	return (
 		<SearchWrapper>
 			<SearchContent>
-				<SearchTitle>Find your best deal quick and easy</SearchTitle>
+				<SearchTitle>Find Your Options, Your Way!</SearchTitle>
 				<SearchForm>
 					<Select
 						id="make"
@@ -46,6 +46,7 @@ const SearchBox: React.FC = ( props ) => {
 						label="Zip Code"
 						error={false}
 						message="Enter a valid"
+						length={5}
 						onlyNumbers
 					/>
 					<Button>Search</Button>
