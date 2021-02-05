@@ -1,6 +1,3 @@
-// Packages
-import Scroll from 'react-scroll';
-
 // Definitions
 import { IList } from '@def/IList';
 
@@ -12,13 +9,10 @@ import SectionTitle from '@comp/section-title';
 import { ByCitiesWrapper } from './style';
 
 const ByCities: React.FC<IList> = (props) => {
-	const Element = Scroll.Element;
 	return (
 		<ByCitiesWrapper>
-			<Element name="browseByLocation">
-				<SectionTitle>Browse by Top Cities</SectionTitle>
-				<List items={props.items} type={props.type} columns={props.columns} />
-			</Element>
+			<SectionTitle>Browse by Top Cities</SectionTitle>
+			<List items={props.items} type={props.type} columns={props.columns} />
 		</ByCitiesWrapper>
 	);
 };
