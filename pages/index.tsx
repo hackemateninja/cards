@@ -8,11 +8,11 @@ import Head from 'next/head';
 import DefaultLayout from '@layout/default';
 
 // Data
-import { TopCities } from '@data/TopCities';
-import { HomeArticles } from '@data/HomeArticles';
-import { Prices } from '@data/Prices';
+import { topCities } from '@data/top-cities';
+import { homeArticles } from '@data/home-articles';
+import { prices } from '@data/prices';
 import { makes } from '@data/makes';
-import { BodyTypes } from '@data/BodyTypes';
+import { bodyTypes } from '@data/body-types';
 
 // Slices
 import { setMakes } from '@redux/slices/makes';
@@ -57,13 +57,13 @@ const Home: React.FC = ( props ) => {
 						<img src="assets/img/banners/banner-02.png" alt="Space Desktop 2" />
 					</Spaces>
 					
-					<ByTypes items={BodyTypes} />
+					<ByTypes items={bodyTypes} />
 
 					<Spaces type="mobile" bg={true}>
 						<img src="assets/img/banners/banner-01-m.jpg" alt="Space Mobile 1" />
 					</Spaces>
 
-					<ByPrices items={Prices} type="prices" columns={3} />
+					<ByPrices items={prices} type="prices" columns={3} />
 					<ByMakes />
 
 					<Spaces type="desktop" bg={true}>
@@ -74,13 +74,13 @@ const Home: React.FC = ( props ) => {
 				<HotDeals />
 
 				<Container>
-					<ByArticles items={HomeArticles} type="articles" columns={3} />
+					<ByArticles items={homeArticles} type="articles" columns={3} />
 
 					<Spaces type="mobile" bg={true}>
 						<img src="assets/img/banners/banner-02-m.jpg" alt="Space Mobile 2" />
 					</Spaces>
 
-					<ByCities items={TopCities} type="cities" columns={3} />
+					<ByCities items={topCities} type="cities" columns={3} />
 
 					<Spaces type="desktop" bg={true}>
 						<img src="assets/img/banners/banner-01.jpg" alt="Space Desktop 1" />
