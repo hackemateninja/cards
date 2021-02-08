@@ -1,6 +1,6 @@
 // Packages
-import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 import { GetServerSideProps } from 'next';
 import absoluteUrl from 'next-absolute-url';
 
@@ -8,12 +8,9 @@ import absoluteUrl from 'next-absolute-url';
 import { IPlainObject } from '@def/IPlainObject';
 
 // Layout
-import DefaultLayout from '@layout/default';
+import SRPLayout from '@layout/srp';
 
 //Components
-import Container from '@comp/container';
-import Row from '@comp/container/row';
-import Column from '@comp/container/column';
 import Listings from '@comp/buy/listings'
 
 // Styles
@@ -28,18 +25,9 @@ const Buy: React.FC<IPlainObject> = ( props ) => {
 				<title>Buy Used Cars - Shop Used Cars</title>
 			</Head>
 			<GlobalStyles />
-			<DefaultLayout>
-				<Container>
-                    <Row>
-                        <Column xs={1} md={4}>
-                            <p>Filters</p>
-                        </Column>
-						<Column xs={1} md='auto'>
-							<Listings items={props.results} />
-                        </Column>
-                    </Row>
-				</Container>
-			</DefaultLayout>
+			<SRPLayout>
+				<Listings items={props.results} />
+			</SRPLayout>
 		</ThemeProvider>
 	);
 };

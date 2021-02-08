@@ -72,7 +72,7 @@ const FormElementMessage = styled.span`
 
 const Element = styled.input<{ icon?: boolean, as?: string, active?: boolean }>`
 	outline: none;
-	background: transparent;
+	background: #FFF;
 	width: 100%;
 	height: 44px;
 	border: 1px solid rgba( 0, 0, 0, .2 );
