@@ -7,11 +7,11 @@ import { ButtonWrapper } from './style';
 const Button: React.FC<IPlainObject> = ( props ) => {
 	return (
 		props.href !== undefined ? (
-			<ButtonWrapper as="a" href={props.href} st={props.st}>
+			<ButtonWrapper as="a" href={props.href} variation={props.variation}>
 				<span>{props.children}</span>
 			</ButtonWrapper>
 		) : (
-			<ButtonWrapper st={props.st}>
+			<ButtonWrapper variation={props.variation} type={props.type}>
 				<span>{props.children}</span>
 			</ButtonWrapper>
 		)
