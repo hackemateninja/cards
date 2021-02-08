@@ -19,12 +19,12 @@ import { setMakes } from '@redux/slices/makes';
 
 //Components
 import Container from '@comp/container';
-import HeroImage from '@comp/hero-image';
-import ByTypes from '@comp/by-types';
-import ByPrices from '@comp/by-prices';
-import ByMakes from '@comp/by-makes';
-import ByArticles from '@comp/by-articles';
-import ByCities from '@comp/by-cities';
+import HeroImage from '@comp/home/hero-image';
+import ByTypes from '@comp/home/by-types';
+import ByPrices from '@comp/home/by-prices';
+import ByMakes from '@comp/home/by-makes';
+import ByArticles from '@comp/home/by-articles';
+import ByCities from '@comp/home/by-cities';
 import Spaces from '@comp/spaces';
 import BackToTop from '@comp/back-to-top'
 import Display from '@comp/container/display';
@@ -33,7 +33,7 @@ import Display from '@comp/container/display';
 import GlobalStyles from '@theme/global';
 import PrimaryTheme from '@theme/primary';
 import SearchBox from '@comp/search-box';
-import HotDeals from '@comp/hot-deals';
+import HotDeals from '@comp/home/hot-deals';
 
 const Home: React.FC = ( props ) => {
 	const dispatch = useDispatch();
