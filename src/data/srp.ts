@@ -29,9 +29,9 @@ export const results = [
 		"id": 2,
 		"url": "/vehicle-details/2",
 		"images": [
-			"//images.autobytel.com/cyber/483499/i1FTMF1C59KKD08191_1.jpg",
-			"//images.autobytel.com/cyber/483499/i1FTMF1C59KKD08191_2.jpg",
-			"//images.autobytel.com/cyber/483499/i1FTMF1C59KKD08191_3.jpg"
+			"//images.autobytel.com/cyber/301221/i1FTFX1E5XJKC30375_1.jpg",
+			"//images.cars.com/phototab/in/v1/452418/1FTEW1EP0JFB07094/999f2fddcac06de55d95e2ebe9409541.jpg",
+			"//images.cars.com/phototab/in/v1/425487/1FTEX1EPXJFE54039/6af5a0694265fd618fdc26cfae1325e5.jpg"
 		],
 		"year": "2019",
 		"make": "Ford",

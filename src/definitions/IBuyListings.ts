@@ -6,6 +6,10 @@ export interface IBuyListingContent {
 	item: IBuyListing
 }
 
+export interface IBuyListingGallery {
+    images: []
+}
+
 export interface IBuyListing {
     id: number,
     url: string,
