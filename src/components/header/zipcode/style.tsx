@@ -65,6 +65,7 @@ const ZipCodeIcon = styled.svg`
 	width: 16px;
 	height: 16px;
 	z-index: 2;
+	fill: #00a0ff;
 `;
 
 export {

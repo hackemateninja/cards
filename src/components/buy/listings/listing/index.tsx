@@ -8,7 +8,7 @@ import { IBuyListingContent } from '@def/IBuyListings';
 import Gallery from './gallery';
 
 // Styles
-import { ListingWrapper, ListingImg, ListingMainText, ListingMain, ListingInfo, ListingMainTrigger, ListingMainContent, ListingMainContentPad, ListingMainTitle, ListingMainSpecs, ListingMainSpec, ListingMainLocation, ListingMainButton, ListingInfoSale, ListingInfoPrice, ListingInfoPayment, ListingInfoTitle, ListingInfoText, ListingInfoBtn, ListingBadge, ListingBadgeSvg, ListingBadgeBg, ListingRibbon } from './style';
+import { ListingWrapper, ListingImg, ListingMainText, ListingMain, ListingInfo, ListingMainTrigger, ListingMainContent, ListingMainContentPad, ListingMainTitle, ListingMainSpecsContainer, ListingMainSpecs, ListingMainSpec, ListingMainLocation, ListingMainLocationSvg, ListingMainButton, ListingInfoSale, ListingInfoPrice, ListingInfoPayment, ListingInfoTitle, ListingInfoText, ListingInfoMonths, ListingInfoBtn, ListingBadge, ListingBadgeSvg, ListingBadgeBg, ListingRibbon } from './style';
 
 const Listing: React.FC<IBuyListingContent> = (props) => {
 	const [accordion, setAccordion] = useState<boolean>(false);
@@ -29,19 +29,24 @@ const Listing: React.FC<IBuyListingContent> = (props) => {
 					<ListingMainContent active={accordion}>
 						<ListingMainContentPad>
 							<ListingMainTitle>{item.year} {item.make} {item.model}</ListingMainTitle>
-							<ListingMainSpecs>
-								<ListingMainSpec>VIN: <span>{item.vin}</span></ListingMainSpec>
-								<ListingMainSpec>Stock #: <span>{item.stock}</span></ListingMainSpec>
-								<ListingMainSpec>Mileage: <span>{item.mileage}</span></ListingMainSpec>
-								<ListingMainSpec>Engine: <span>{item.engine}</span></ListingMainSpec>
-								<ListingMainSpec>Doors: <span>{item.doors}</span></ListingMainSpec>
-								<ListingMainSpec>Transmission: <span>{item.transmission}</span></ListingMainSpec>
-								<ListingMainSpec>Fuel Type: <span>{item.fuelType}</span></ListingMainSpec>
-								<ListingMainSpec>MPG: <span>{item.mpg}</span></ListingMainSpec>
-								<ListingMainSpec>Color Exterior: <span>{item.colorExterior}</span></ListingMainSpec>
-								<ListingMainSpec>Color Interior: <span>{item.colorInterior}</span></ListingMainSpec>
-							</ListingMainSpecs>
-							<ListingMainLocation>{item.location} - {item.milesAway} miles away</ListingMainLocation>
+							<ListingMainSpecsContainer>
+								<ListingMainSpecs>
+									<ListingMainSpec><span>VIN:</span> <span>{item.vin ? item.vin : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Stock #:</span> <span>{item.stock ? item.stock : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Mileage:</span> <span>{item.mileage ? item.mileage : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Engine:</span> <span>{item.engine ? item.engine : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Doors:</span> <span>{item.doors ? item.doors : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Transmission:</span> <span>{item.transmission ? item.transmission : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Fuel Type:</span> <span>{item.fuelType ? item.fuelType : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>MPG:</span> <span>{item.mpg ? item.mpg : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Color Exterior:</span> <span>{item.colorExterior ? item.colorExterior : 'N/A'}</span></ListingMainSpec>
+									<ListingMainSpec><span>Color Interior:</span> <span>{item.colorInterior ? item.colorInterior : 'N/A'}</span></ListingMainSpec>
+								</ListingMainSpecs>
+							</ListingMainSpecsContainer>
+							<ListingMainLocation>
+								<ListingMainLocationSvg><use xlinkHref="#icon-location" /></ListingMainLocationSvg>
+								{item.location ? item.location : 'N/A'} - {item.milesAway ? item.milesAway : 'N/A'} miles away
+							</ListingMainLocation>
 							<ListingMainButton>View all details</ListingMainButton>
 						</ListingMainContentPad>
 					</ListingMainContent>
@@ -65,6 +70,7 @@ const Listing: React.FC<IBuyListingContent> = (props) => {
 					<ListingInfoTitle>{item.year} {item.make} {item.model}</ListingInfoTitle>
 					<ListingInfoText>{item.mileage} miles</ListingInfoText>
 					<ListingInfoText>{item.location} - {item.milesAway} miles away</ListingInfoText>
+					<ListingInfoMonths>*{item.monthPeriod} Month Period</ListingInfoMonths>
 					<ListingInfoBtn>Check Availability</ListingInfoBtn>
 				</ListingInfo>
 			</ListingMainText>

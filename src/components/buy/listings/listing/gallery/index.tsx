@@ -1,9 +1,14 @@
 // Packages
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import Flickity from 'react-flickity-component';
 
 // Definitions
+import { RootState } from '@def/TRootReducer';
 import { IBuyListingGallery } from '@def/IBuyListings';
+
+// Slices
+import { setCurrent } from '@redux/slices/test';
 
 // Components
 import SliderWrapper from '@comp/slider-wrapper';
@@ -12,6 +17,11 @@ import SliderWrapper from '@comp/slider-wrapper';
 import { GalleryWrapper, GalleryImgContainer, GalleryImgCover, GalleryImg } from './style';
 
 const Gallery: React.FC<IBuyListingGallery> = (props) => {
+	let flkty = null;
+	const dispatch = useDispatch();
+	const [currentSelected, setCurrentSelected] = useState<number>(1);
+	const [slidesAvailable, setslidesAvailable] = useState<number>(undefined);
+	const currentElem = useSelector((state: RootState) => state.test.currentSelected);
 	const flickityOptions = {
 		lazyLoad: true,
 		prevNextButtons: true,
@@ -26,6 +36,17 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 		}
 	}
 
+	useEffect(() => {
+		if (flkty !== null) {
+			flkty.on('ready', () => {
+				setslidesAvailable(flkty.slides.length);
+			});
+			flkty.on('change', (event: any, index: number) => {
+				dispatch(setCurrent(index));
+			});
+		}
+	}, []);
+
 	return (
 		<GalleryWrapper>
 			<SliderWrapper>
@@ -35,6 +56,7 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 					options={flickityOptions}
 					disableImagesLoaded={false}
 					reloadOnUpdate
+					flickityRef={c => (flkty = c)}
 				>
 					{props.images.map((item: string, index: number) => (
 						<GalleryImgContainer key={index}>
@@ -44,6 +66,7 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 						</GalleryImgContainer>
 					))}
 				</Flickity>
+				<p>{currentElem} of {slidesAvailable}</p>
 			</SliderWrapper>
 		</GalleryWrapper>
 	);

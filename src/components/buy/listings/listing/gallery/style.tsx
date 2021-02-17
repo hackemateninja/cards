@@ -10,6 +10,10 @@ const GalleryWrapper = styled.div`
 		background-color: #fff;
 		width: 32px;
 		height: 38px;
+		@media screen and ( min-width: 768px ) {
+			width: 24px;
+			height: 28px;
+		}
 	}
 	.flickity-prev-next-button.previous {
 		left: 0;
@@ -58,6 +62,12 @@ const GalleryImgContainer = styled.div`
     padding-bottom: 62.55%;
 	@media screen and ( min-width: 340px ) {
 		height: 280px;
+	}
+	@media screen and ( min-width: 768px ) {
+		height: 120px;
+	}
+	@media screen and ( min-width: 1260px ) {
+		height: 190px;
 	}
 `;
 const GalleryImgCover = styled.div`

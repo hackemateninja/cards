@@ -11,17 +11,31 @@ const ListingWrapper = styled.div`
 	background-color: #F6F6F6;
 	margin: 15px 0;
 	overflow: hidden;
+	@media screen and ( min-width: 768px ) {
+		flex-wrap: nowrap;
+	}
 `;
-const ListingImg = styled.span`
+const ListingImg = styled.div`
 	-webkit-box-flex: 0;
     flex: 0 0 100%;
     max-width: 100%;
+	@media screen and ( min-width: 768px ) {
+		flex: 0 0 150px;
+		max-width: 150px;
+	}
+	@media screen and ( min-width: 1260px ) {
+		flex: 0 0 252px;
+		max-width: 252px;
+	}
 `;
 const ListingMainText = styled.a`
 	text-decoration: none;
 	width: 100%;
 	display: flex;
     flex-wrap: wrap;
+	@media screen and ( min-width: 768px ) {
+		flex-wrap: nowrap;
+	}
 `;
 const ListingMain = styled.span`
 	-webkit-box-flex: 0;
@@ -30,6 +44,16 @@ const ListingMain = styled.span`
 	order: 2;
 	@media screen and ( min-width: 768px ) {
 		order: 0;
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		max-width: 100%;
+		padding: 10px;
+	}
+	@media screen and ( min-width: 1260px ) {
+		padding: 20px;
 	}
 `;
 const ListingInfo = styled.span`
@@ -39,6 +63,16 @@ const ListingInfo = styled.span`
 	padding: 10px 15px;
 	span:nth-last-child(2) {
 		margin-bottom: 0;
+	}
+	@media screen and ( min-width: 768px ) {
+		flex: 0 0 180px;
+		max-width: 180px;
+		padding: 10px;
+	}
+	@media screen and ( min-width: 1260px ) {
+		flex: 0 0 206px;
+		max-width: 206px;
+		padding: 10px 20px 20px 0;
 	}
 `;
 const ListingMainTrigger = styled.span<{ active?: boolean }>`
@@ -92,29 +126,102 @@ const ListingMainContentPad = styled.span`
 `;
 const ListingMainTitle = styled.span`
 	display: none;
+	@media screen and ( min-width: 768px ) {
+		display: block;
+		color: #054664;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 22px;
+		margin: 10px 0 8px;
+	}
+	@media screen and ( min-width: 1024px ) {
+		margin: 0 0 8px;
+	}
+`;
+const ListingMainSpecsContainer = styled.span`
+	@media screen and ( min-width: 1024px ) {
+		display: block;
+		min-height: 168px;
+	}
+	@media screen and ( min-width: 1260px ) {
+		min-height: 158px;
+	}
 `;
 const ListingMainSpecs = styled.span`
-	
+	@media screen and ( min-width: 768px ) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 `;
 const ListingMainSpec = styled.span`
-	display: block;
+	display: flex;
 	margin-bottom: 8px;
-	color: #054664;
-	font-size: 12px;
-	font-weight: 700;
 	line-height: 16px;
+	font-size: 12px;
 	&:last-child {
 		margin-bottom: 15px;
 	}
 	span {
-		color: #707070;
-		font-size: 12px;
-		line-height: 16px;
-		font-weight: 300;
+		&:first-child {
+			color: #054664;
+			font-weight: 700;
+			padding-right: 5px;
+		}
+		&:last-child {
+			color: #707070;
+			font-weight: 300;
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			-ms-flex-negative: 1;
+			flex-shrink: 1;
+			-webkit-box-flex: 0;
+			word-break: break-word;
+		}
+	}
+	@media screen and ( min-width: 768px ) {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		-ms-flex-negative: 1;
+		flex-shrink: 1;
+		-webkit-box-flex: 0;
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-right: 5px;
+		&:last-child {
+			margin-bottom: 8px;
+		}
+	}
+	@media screen and ( min-width: 1024px ) {
+		&:nth-child(1), &:nth-child(2) {
+			margin-bottom: 20px;
+		}
 	}
 `;
 const ListingMainLocation = styled.span`
 	display: none;
+	@media screen and ( min-width: 768px ) {
+		display: flex;
+		color: #707070;
+		font-size: 12px;
+		line-height: 16px;
+		align-items: center;
+		margin: 10px 0;
+	}
+	@media screen and ( min-width: 1024px ) {
+		margin: 10px 0 0;
+	}
+`;
+const ListingMainLocationSvg = styled.svg`
+	height: 16px;
+	width: 12px;
+	margin-right: 12px;
+	fill: rgba(0,0,0,.2);
 `;
 const ListingMainButton = styled.span`
 	border: 1px solid rgba(0,0,0,0.1);
@@ -127,9 +234,17 @@ const ListingMainButton = styled.span`
 	text-align: center;
 	text-shadow: 0 1px 2px #07AB16;
 	display: block;
+	@media screen and ( min-width: 768px ) {
+		display: none;
+	}
 `;
 const ListingInfoSale = styled.span`
 	display: block;
+	padding-right: 120px;
+	@media screen and ( min-width: 768px ) {
+		margin-top: 36px;
+		padding-right: 0;
+	}
 `;
 const ListingInfoPrice = styled.span`
 	color: #00A0FF;
@@ -139,6 +254,16 @@ const ListingInfoPrice = styled.span`
 	margin-bottom: 4px;
 	display: inline-block;
 	span {display: none;}
+	@media screen and ( min-width: 768px ) {
+		font-size: 28px;
+		line-height: 32px;
+		span {
+			display: block;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 20px;	
+		}
+	}
 `;
 const ListingInfoPayment = styled.span`
 	color: #707070;
@@ -147,6 +272,17 @@ const ListingInfoPayment = styled.span`
 	margin: 0 0 4px 6px;
 	display: inline-block;
 	span {display: none;}
+	@media screen and ( min-width: 768px ) {
+		font-size: 14px;
+		line-height: 20px;
+		margin: 9px 0 2px;
+		span {
+			display: block;
+			font-size: 12px;
+			line-height: 16px;
+			margin-bottom: 2px;
+		}
+	}
 `;
 const ListingInfoTitle = styled.span`
 	color: #054664;
@@ -155,6 +291,9 @@ const ListingInfoTitle = styled.span`
 	line-height: 20px;
 	display: block;
 	margin-bottom: 4px;
+	@media screen and ( min-width: 768px ) {
+		display: none;
+	}
 `;
 const ListingInfoText = styled.span`
 	color: #707070;
@@ -162,9 +301,32 @@ const ListingInfoText = styled.span`
 	line-height: 16px;
 	display: block;
 	margin-bottom: 4px;
+	@media screen and ( min-width: 768px ) {
+		display: none;
+	}
+`;
+const ListingInfoMonths = styled.span`
+	@media screen and ( min-width: 768px ) {
+		color: #B2B2B2;
+		font-size: 12px;
+		line-height: 16px;	
+	}
 `;
 const ListingInfoBtn = styled.span`
 	display: none;
+	@media screen and ( min-width: 768px ) {
+		display: block;
+		border: 1px solid rgba(0,0,0,0.1);
+		border-radius: 4px;
+		background-color: #0AE61E;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 40px;
+		text-align: center;
+		text-shadow: 0 1px 2px #07AB16;
+		margin-top: 26px;
+	}
 `;
 const ListingBadge = styled.span`
     position: absolute;
@@ -284,15 +446,18 @@ export {
 	ListingMainContent,
 	ListingMainContentPad,
 	ListingMainTitle,
+	ListingMainSpecsContainer,
 	ListingMainSpecs,
 	ListingMainSpec,
 	ListingMainLocation,
+	ListingMainLocationSvg,
 	ListingMainButton,
 	ListingInfoSale,
 	ListingInfoPrice,
 	ListingInfoPayment,
 	ListingInfoTitle,
 	ListingInfoText,
+	ListingInfoMonths,
 	ListingInfoBtn,
 	ListingBadge,
 	ListingBadgeSvg,
