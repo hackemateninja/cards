@@ -112,12 +112,20 @@ const GalleryBottom = styled.div<{ partner?: string }>`
 	}
 `;
 const GalleryPtr = styled.span<{ partner?: string, make?: string; }>`
+	display: flex;
+	align-items: center;
 	span {
 		font-size: 12px;
 		font-weight: 700;
-		max-width: 75px;
+		max-width: 80px;
 		color: #6D6E71;
 		display: inline-block;
+		border-left: 1px solid #231F20;
+		margin-left: 5px;
+		padding-left: 10px;
+	}
+	&:before {
+		background-position: ${(props) => handleMakeLogo(props.make)};
 	}
 	${(props) => (props.partner === 'carmax' || props.partner === 'autonation') && css`
 		height: 21px;
@@ -131,10 +139,146 @@ const GalleryPtr = styled.span<{ partner?: string, make?: string; }>`
 			svg { width: 113px; height: 21px; }
 		}
 	`}
-	${(props) => props.partner === 'cpo' && css`
-		
+	${(props) => (props.partner === 'cpo') && css`
+		&:before {
+			content: '';
+			width: 50px;
+			height: 36px;
+			background-size: 250px 432px;
+			background-repeat: no-repeat;
+			transform: scale(0.8);
+			display: inline-block;
+			background-image: url('/assets/img/makes.jpg');
+		}
 	`}
 `;
+
+const handleMakeLogo = (make: string) => {
+	switch (make) {
+	case 'acura' || 'Acura':
+		return '0 0';
+	case 'alfa-romeo' || 'Alfa Romeo':
+		return '-50px 0';
+	case 'am-general' || 'AM General':
+		return '-100px 0';
+	case 'aston-martin' || 'Aston Martin':
+		return '-150px 0';
+	case 'audi' || 'Audi':
+		return '-200px 0';
+	case 'bentley' || 'Bentley':
+		return '0 -36px';
+	case 'bmw' || 'BMW':
+		return '-50px -36px';
+	case 'bugatti' || 'Bugatti':
+		return '-100px -36px';
+	case 'buick' || 'Buick':
+		return '-150px -36px';
+	case 'cadillac' || 'Cadillac':
+		return '-200px -36px';
+	case 'chevrolet' || 'Chevrolet':
+		return '0 -72px';
+	case 'chrysler' || 'Chrysler':
+		return '-50px -72px';
+	case 'daewoo' || 'Daewoo':
+		return '-100px -72px';
+	case 'dodge' || 'Dodge':
+		return '-150px -72px';
+	case 'ferrari' || 'Ferrari':
+		return '-200px -72px';
+	case 'fiat' || 'FIAT':
+		return '0 -108px';
+	case 'fisker' || 'Fisker':
+		return '-50px -108px';
+	case 'ford' || 'Ford':
+		return '-100px -108px';
+	case 'genesis' || 'Genesis':
+		return '-150px -108px';
+	case 'gmc' || 'GMC':
+		return '-200px -108px';
+	case 'honda' || 'Honda':
+		return '0 -144px';
+	case 'hummer' || 'HUMMER':
+		return '-50px -144px';
+	case 'hyundai' || 'Hyundai':
+		return '-100px -144px';
+	case 'infiniti' || 'Infiniti':
+		return '-150px -144px';
+	case 'isuzu' || 'Isuzu':
+		return '-200px -144px';
+	case 'jaguar' || 'Jaguar':
+		return '0 -180px';
+	case 'jeep' || 'Jeep':
+		return '-50px -180px';
+	case 'kia' || 'Kia':
+		return '-100px -180px';
+	case 'lamborghini' || 'Lamborghini':
+		return '-150px -180px';
+	case 'land-rover' || 'Land Rover':
+		return '-200px -180px';
+	case 'lexus' || 'Lexus':
+		return '0 -216px';
+	case 'lincoln' || 'Lincoln':
+		return '-50px -216px';
+	case 'lotus' || 'Lotus':
+		return '-100px -216px';
+	case 'maserati' || 'Maserati':
+		return '-150px -216px';
+	case 'maybach' || 'Maybach':
+		return '-200px -216px';
+	case 'mazda' || 'Mazda':
+		return '0 -252px';
+	case 'mclaren' || 'McLaren':
+		return '-50px -252px';
+	case 'mercedes-benz' || 'Mercedes-Benz':
+		return '-100px -252px';
+	case 'mercury' || 'Mercury':
+		return '-150px -252px';
+	case 'mini' || 'MINI':
+		return '-200px -252px';
+	case 'mitsubishi' || 'Mitsubishi':
+		return '0 -288px';
+	case 'nissan' || 'Nissan':
+		return '-50px -288px';
+	case 'oldsmobile' || 'Oldsmobile':
+		return '-100px -288px';
+	case 'panoz' || 'Panoz':
+		return '-150px -288px';
+	case 'plymouth' || 'Plymouth':
+		return '-200px -288px';
+	case 'pontiac' || 'Pontiac':
+		return '0 -324px';
+	case 'porsche' || 'Porsche':
+		return '-50px -324px';
+	case 'ram' || 'Ram':
+		return '-100px -324px';
+	case 'rolls-royce' || 'Rolls-Royce':
+		return '-150px -324px';
+	case 'saab' || 'Saab':
+		return '-200px -324px';
+	case 'saturn' || 'Saturn':
+		return '0 -360px';
+	case 'scion' || 'Scion':
+		return '-50px -360px';
+	case 'smart' || 'Smart':
+		return '-100px -360px';
+	case 'srt' || 'SRT':
+		return '-150px -360px';
+	case 'subaru' || 'Subaru':
+		return '-200px -360px';
+	case 'suzuki' || 'Suzuki':
+		return '0 -396px';
+	case 'tesla' || 'Tesla':
+		return '-50px -396px';
+	case 'toyota' || 'Toyota':
+		return '-100px -396px';
+	case 'volkswagen' || 'Volkswagen':
+		return '-150px -396px';
+	case 'volvo' || 'Volvo':
+		return '-200px -396px';
+	default:
+		return '0 0';
+	}
+};
 
 export {
 	GalleryWrapper,
