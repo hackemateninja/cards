@@ -1,27 +1,19 @@
 // Packages
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
 import Flickity from 'react-flickity-component';
 
 // Definitions
-import { RootState } from '@def/TRootReducer';
 import { IBuyListingGallery } from '@def/IBuyListings';
-
-// Slices
-import { setCurrent } from '@redux/slices/test';
 
 // Components
 import SliderWrapper from '@comp/slider-wrapper';
 
 // Styles
-import { GalleryWrapper, GalleryImgContainer, GalleryImgCover, GalleryImg } from './style';
+import { GalleryWrapper, GalleryImgContainer, GalleryImgCover, GalleryImg, GalleryBottom, GalleryPtr } from './style';
 
 const Gallery: React.FC<IBuyListingGallery> = (props) => {
 	let flkty = null;
-	const dispatch = useDispatch();
-	const [currentSelected, setCurrentSelected] = useState<number>(1);
-	const [slidesAvailable, setslidesAvailable] = useState<number>(undefined);
-	const currentElem = useSelector((state: RootState) => state.test.currentSelected);
+
 	const flickityOptions = {
 		lazyLoad: true,
 		prevNextButtons: true,
@@ -36,14 +28,15 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 		}
 	}
 
+	const updateStatus = () => {
+		var slideNumber = flkty.selectedIndex + 1;
+		flkty.element.nextSibling.lastChild.textContent = flkty.slides.length > 1 ? slideNumber + ' of ' + flkty.slides.length + ' images' : 'No more images available';
+	}
+
 	useEffect(() => {
 		if (flkty !== null) {
-			flkty.on('ready', () => {
-				setslidesAvailable(flkty.slides.length);
-			});
-			flkty.on('change', (event: any, index: number) => {
-				dispatch(setCurrent(index));
-			});
+			updateStatus();
+			flkty.on( 'select', updateStatus );
 		}
 	}, []);
 
@@ -66,7 +59,12 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 						</GalleryImgContainer>
 					))}
 				</Flickity>
-				<p>{currentElem} of {slidesAvailable}</p>
+				<GalleryBottom partner={props.partner}>
+					{props.partner === 'cpo' && <GalleryPtr partner={props.partner} make={props.make}><span>CERTIFIED PRE-OWNED</span></GalleryPtr>}
+					{props.partner === 'carmax' && <GalleryPtr partner={props.partner}><svg><use xlinkHref="#carmax-logo" /></svg></GalleryPtr>}
+					{props.partner === 'autonation' && <GalleryPtr partner={props.partner}><svg><use xlinkHref="#autonation-logo" /></svg></GalleryPtr>}
+					<p></p>
+				</GalleryBottom>
 			</SliderWrapper>
 		</GalleryWrapper>
 	);

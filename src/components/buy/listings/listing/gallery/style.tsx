@@ -1,5 +1,5 @@
 // Packages
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const GalleryWrapper = styled.div`
 	max-width: 400px;
@@ -86,10 +86,61 @@ const GalleryImg = styled.img`
     overflow: hidden;
     width: 50%;
 `;
+const GalleryBottom = styled.div<{ partner?: string }>`
+	min-height: 63px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+	display: ${(props) => props.partner ? 'flex' : 'none'};
+	@media screen and ( min-width: 768px ) {
+		padding: 10px;
+		border: none;
+		display: flex;
+	}
+	p {
+		margin: 0;
+		color: #707070;
+		font-size: 12px;
+		line-height: 16px;
+		text-align: right;
+	}
+	@media screen and ( min-width: 768px ) {
+		p {
+			margin: ${(props) => props.partner ? '0' : 'auto'};
+			${(props) => props.partner && css` max-width: 50px; `}
+		}
+	}
+`;
+const GalleryPtr = styled.span<{ partner?: string, make?: string; }>`
+	span {
+		font-size: 12px;
+		font-weight: 700;
+		max-width: 75px;
+		color: #6D6E71;
+		display: inline-block;
+	}
+	${(props) => (props.partner === 'carmax' || props.partner === 'autonation') && css`
+		height: 21px;
+		svg { width: 113px; height: 21px; }
+		@media screen and ( min-width: 768px ) {
+			height: 15px;
+			svg { width: 66px; height: 15px; }
+		}
+		@media screen and ( min-width: 1260px ) {
+			height: 21px;
+			svg { width: 113px; height: 21px; }
+		}
+	`}
+	${(props) => props.partner === 'cpo' && css`
+		
+	`}
+`;
 
 export {
 	GalleryWrapper,
 	GalleryImgContainer,
 	GalleryImgCover,
-	GalleryImg
+	GalleryImg,
+	GalleryBottom,
+	GalleryPtr
 };

@@ -7,7 +7,9 @@ export interface IBuyListingContent {
 }
 
 export interface IBuyListingGallery {
-    images: []
+    images: [],
+    partner?: string,
+    make?: string
 }
 
 export interface IBuyListing {

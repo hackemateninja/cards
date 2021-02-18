@@ -21,7 +21,7 @@ const Listing: React.FC<IBuyListingContent> = (props) => {
 	return (
 		<ListingWrapper>
 			<ListingImg>
-				<Gallery images={item.images} />
+				<Gallery images={item.images} partner={item.partner} make={item.make} />
 			</ListingImg>
 			<ListingMainText href={item.url}>
 				<ListingMain>

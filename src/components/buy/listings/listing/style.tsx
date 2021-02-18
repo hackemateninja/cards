@@ -19,9 +19,16 @@ const ListingImg = styled.div`
 	-webkit-box-flex: 0;
     flex: 0 0 100%;
     max-width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 	@media screen and ( min-width: 768px ) {
 		flex: 0 0 150px;
 		max-width: 150px;
+		border-bottom: none;
+		margin-bottom: 1px;
+		margin-left: 1px;
+		border-top-left-radius: 6px;
+		border-bottom-left-radius: 6px;
 	}
 	@media screen and ( min-width: 1260px ) {
 		flex: 0 0 252px;
