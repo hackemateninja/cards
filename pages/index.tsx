@@ -10,7 +10,7 @@ import DefaultLayout from '@layout/default';
 // Data
 import { topCities } from '@data/top-cities';
 import { homeArticles } from '@data/home-articles';
-import { prices } from '@data/prices';
+import { prices } from '@data/range-prices';
 import { makes } from '@data/makes';
 import { bodyTypes } from '@data/body-types';
 
