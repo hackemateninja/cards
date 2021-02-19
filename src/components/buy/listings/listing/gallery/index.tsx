@@ -60,7 +60,7 @@ const Gallery: React.FC<IBuyListingGallery> = (props) => {
 					))}
 				</Flickity>
 				<GalleryBottom partner={props.partner}>
-					{props.partner === 'cpo' && <GalleryPtr partner={props.partner} make={props.make.toLowerCase()}><span>CERTIFIED PRE-OWNED</span></GalleryPtr>}
+					{props.partner === 'cpo' && <GalleryPtr partner={props.partner} make={props.make}><span>CERTIFIED PRE-OWNED</span></GalleryPtr>}
 					{props.partner === 'carmax' && <GalleryPtr partner={props.partner}><svg><use xlinkHref="#carmax-logo" /></svg></GalleryPtr>}
 					{props.partner === 'autonation' && <GalleryPtr partner={props.partner}><svg><use xlinkHref="#autonation-logo" /></svg></GalleryPtr>}
 					<p></p>

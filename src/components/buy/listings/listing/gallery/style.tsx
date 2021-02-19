@@ -92,22 +92,30 @@ const GalleryBottom = styled.div<{ partner?: string }>`
     justify-content: space-between;
     padding: 15px;
 	display: ${(props) => props.partner ? 'flex' : 'none'};
-	@media screen and ( min-width: 768px ) {
-		padding: 10px;
-		border: none;
-		display: flex;
-	}
 	p {
 		margin: 0;
 		color: #707070;
 		font-size: 12px;
 		line-height: 16px;
-		text-align: right;
+		text-align: ${(props) => props.partner ? 'right' : 'center'};;
 	}
 	@media screen and ( min-width: 768px ) {
+		padding: 10px;
+		border: none;
+		display: flex;
+		flex-direction: ${(props) => props.partner === 'cpo' && 'column'};
 		p {
 			margin: ${(props) => props.partner ? '0' : 'auto'};
 			${(props) => props.partner && css` max-width: 50px; `}
+			max-width: ${(props) => props.partner === 'cpo' && '100%'};
+			margin-top: ${(props) => props.partner === 'cpo' && '5px'};
+		}
+	}
+	@media screen and ( min-width: 1260px ) {
+		flex-direction: unset;
+		p {
+			${(props) => props.partner && css` max-width: 50px; `}
+			margin-top: ${(props) => props.partner === 'cpo' && '0'};
 		}
 	}
 `;
@@ -126,6 +134,12 @@ const GalleryPtr = styled.span<{ partner?: string, make?: string; }>`
 	}
 	&:before {
 		background-position: ${(props) => handleMakeLogo(props.make)};
+	}
+	@media screen and ( min-width: 768px ) {
+		span {margin-left: 1px;}
+	}
+	@media screen and ( min-width: 1260px ) {
+		span {margin-left: 5px;}
 	}
 	${(props) => (props.partner === 'carmax' || props.partner === 'autonation') && css`
 		height: 21px;
@@ -155,125 +169,125 @@ const GalleryPtr = styled.span<{ partner?: string, make?: string; }>`
 
 const handleMakeLogo = (make: string) => {
 	switch (make) {
-	case 'acura' || 'Acura':
+	case 'Acura':
 		return '0 0';
-	case 'alfa-romeo' || 'Alfa Romeo':
+	case 'Alfa Romeo':
 		return '-50px 0';
-	case 'am-general' || 'AM General':
+	case 'AM General':
 		return '-100px 0';
-	case 'aston-martin' || 'Aston Martin':
+	case 'Aston Martin':
 		return '-150px 0';
-	case 'audi' || 'Audi':
+	case 'Audi':
 		return '-200px 0';
-	case 'bentley' || 'Bentley':
+	case 'Bentley':
 		return '0 -36px';
-	case 'bmw' || 'BMW':
+	case 'BMW':
 		return '-50px -36px';
-	case 'bugatti' || 'Bugatti':
+	case 'Bugatti':
 		return '-100px -36px';
-	case 'buick' || 'Buick':
+	case 'Buick':
 		return '-150px -36px';
-	case 'cadillac' || 'Cadillac':
+	case 'Cadillac':
 		return '-200px -36px';
-	case 'chevrolet' || 'Chevrolet':
+	case 'Chevrolet':
 		return '0 -72px';
-	case 'chrysler' || 'Chrysler':
+	case 'Chrysler':
 		return '-50px -72px';
-	case 'daewoo' || 'Daewoo':
+	case 'Daewoo':
 		return '-100px -72px';
-	case 'dodge' || 'Dodge':
+	case 'Dodge':
 		return '-150px -72px';
-	case 'ferrari' || 'Ferrari':
+	case 'Ferrari':
 		return '-200px -72px';
-	case 'fiat' || 'FIAT':
+	case 'FIAT':
 		return '0 -108px';
-	case 'fisker' || 'Fisker':
+	case 'Fisker':
 		return '-50px -108px';
-	case 'ford' || 'Ford':
+	case 'Ford':
 		return '-100px -108px';
-	case 'genesis' || 'Genesis':
+	case 'Genesis':
 		return '-150px -108px';
-	case 'gmc' || 'GMC':
+	case 'GMC':
 		return '-200px -108px';
-	case 'honda' || 'Honda':
+	case 'Honda':
 		return '0 -144px';
-	case 'hummer' || 'HUMMER':
+	case 'HUMMER':
 		return '-50px -144px';
-	case 'hyundai' || 'Hyundai':
+	case 'Hyundai':
 		return '-100px -144px';
-	case 'infiniti' || 'Infiniti':
+	case 'Infiniti':
 		return '-150px -144px';
-	case 'isuzu' || 'Isuzu':
+	case 'Isuzu':
 		return '-200px -144px';
-	case 'jaguar' || 'Jaguar':
+	case 'Jaguar':
 		return '0 -180px';
-	case 'jeep' || 'Jeep':
+	case 'Jeep':
 		return '-50px -180px';
-	case 'kia' || 'Kia':
+	case 'Kia':
 		return '-100px -180px';
-	case 'lamborghini' || 'Lamborghini':
+	case 'Lamborghini':
 		return '-150px -180px';
-	case 'land-rover' || 'Land Rover':
+	case 'Land Rover':
 		return '-200px -180px';
-	case 'lexus' || 'Lexus':
+	case 'Lexus':
 		return '0 -216px';
-	case 'lincoln' || 'Lincoln':
+	case 'Lincoln':
 		return '-50px -216px';
-	case 'lotus' || 'Lotus':
+	case 'Lotus':
 		return '-100px -216px';
-	case 'maserati' || 'Maserati':
+	case 'Maserati':
 		return '-150px -216px';
-	case 'maybach' || 'Maybach':
+	case 'Maybach':
 		return '-200px -216px';
-	case 'mazda' || 'Mazda':
+	case 'Mazda':
 		return '0 -252px';
-	case 'mclaren' || 'McLaren':
+	case 'McLaren':
 		return '-50px -252px';
-	case 'mercedes-benz' || 'Mercedes-Benz':
+	case 'Mercedes-Benz':
 		return '-100px -252px';
-	case 'mercury' || 'Mercury':
+	case 'Mercury':
 		return '-150px -252px';
-	case 'mini' || 'MINI':
+	case 'MINI':
 		return '-200px -252px';
-	case 'mitsubishi' || 'Mitsubishi':
+	case 'Mitsubishi':
 		return '0 -288px';
-	case 'nissan' || 'Nissan':
+	case 'Nissan':
 		return '-50px -288px';
-	case 'oldsmobile' || 'Oldsmobile':
+	case 'Oldsmobile':
 		return '-100px -288px';
-	case 'panoz' || 'Panoz':
+	case 'Panoz':
 		return '-150px -288px';
-	case 'plymouth' || 'Plymouth':
+	case 'Plymouth':
 		return '-200px -288px';
-	case 'pontiac' || 'Pontiac':
+	case 'Pontiac':
 		return '0 -324px';
-	case 'porsche' || 'Porsche':
+	case 'Porsche':
 		return '-50px -324px';
-	case 'ram' || 'Ram':
+	case 'Ram':
 		return '-100px -324px';
-	case 'rolls-royce' || 'Rolls-Royce':
+	case 'Rolls-Royce':
 		return '-150px -324px';
-	case 'saab' || 'Saab':
+	case 'Saab':
 		return '-200px -324px';
-	case 'saturn' || 'Saturn':
+	case 'Saturn':
 		return '0 -360px';
-	case 'scion' || 'Scion':
+	case 'Scion':
 		return '-50px -360px';
-	case 'smart' || 'Smart':
+	case 'Smart':
 		return '-100px -360px';
-	case 'srt' || 'SRT':
+	case 'SRT':
 		return '-150px -360px';
-	case 'subaru' || 'Subaru':
+	case 'Subaru':
 		return '-200px -360px';
-	case 'suzuki' || 'Suzuki':
+	case 'Suzuki':
 		return '0 -396px';
-	case 'tesla' || 'Tesla':
+	case 'Tesla':
 		return '-50px -396px';
-	case 'toyota' || 'Toyota':
+	case 'Toyota':
 		return '-100px -396px';
-	case 'volkswagen' || 'Volkswagen':
+	case 'Volkswagen':
 		return '-150px -396px';
-	case 'volvo' || 'Volvo':
+	case 'Volvo':
 		return '-200px -396px';
 	default:
 		return '0 0';
