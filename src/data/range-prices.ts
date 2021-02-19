@@ -1,4 +1,4 @@
-export const Prices = [
+export const prices = [
 	{ "url": "#", "title": "Cars Under $5,000" },
 	{ "url": "#", "title": "Cars Under $10,000" },
 	{ "url": "#", "title": "Cars Under $15,000" },

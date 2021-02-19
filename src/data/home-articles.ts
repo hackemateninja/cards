@@ -1,4 +1,4 @@
-export const HomeArticles = [
+export const homeArticles = [
 	{ "url": "#", "title": "What is a Used Car Vehicle History Report?" },
 	{ "url": "#", "title": "How to Inspect a Used Car" },
 	{ "url": "#", "title": "What to Look for on a Used Car Test Drive" },

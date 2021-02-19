@@ -6,6 +6,12 @@ export interface IBuyListingContent {
 	item: IBuyListing
 }
 
+export interface IBuyListingGallery {
+    images: [],
+    partner?: string,
+    make?: string
+}
+
 export interface IBuyListing {
     id: number,
     url: string,
